@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'addRecord.dart';
-import 'listRecords.dart';
+import 'buttonWidgetTabs.dart';
+import 'inputSelectionWidgetTabs.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -29,18 +29,14 @@ Widget build(BuildContext context) {
 
 	return Scaffold(
     appBar: AppBar(
-          title: Text('CMS Providers'),
+          title: Text('Tab Properties'),
           centerTitle: true,
           backgroundColor: Colors.teal[900],
           elevation: 5,
           shadowColor: Colors.grey[300],
         ),
         body: Center(          
-          child: Card(
-            elevation: 50,
-            shadowColor: Colors.grey[400],
-            color: Colors.teal[800],
-            child: SizedBox(
+          child: SizedBox(
               width: 300,
               height: 320,
               child: Padding(
@@ -50,23 +46,23 @@ Widget build(BuildContext context) {
                     SizedBox(
                         height: 30,
                       ),
-                      Text('CMS Providers',
+                      Text('Assignment 8',
                       style: TextStyle(
                         height: 3,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.grey[800],
                         ),
                       ),
                       SizedBox(
                         height: 25,
                       ),
-                      Text('Add and view first name, last name, gender, email and phone number.',
+                      Text('Used tab bar, tab view and tab controller properties.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
                         wordSpacing: 1,
-                        color: Colors.white,
+                        color: Colors.grey[700],
                         ),
                       ),
                       SizedBox(
@@ -76,7 +72,6 @@ Widget build(BuildContext context) {
                 ),
                 ),
               )
-            ),
             
           ),      
           drawer: Drawer(
@@ -89,6 +84,9 @@ Widget build(BuildContext context) {
                         height: 10,
                       ),
                     Padding(padding: EdgeInsets.all(1.0),
+                    ),
+                    SizedBox(
+                        height: 30,
                     ),
                     Text('Ayesha Tahir',
                     style: TextStyle(
@@ -112,17 +110,17 @@ Widget build(BuildContext context) {
                 
                 ),
                 ListTile(
-                  leading: new Icon(Icons.add),
-                  title: Text('Add Records'),
+                  leading: new Icon(Icons.smart_button),
+                  title: Text('Button Widgets'),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => AddRecord()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ButtonAppBar()));
                   }
                 ),
                 ListTile(
                   leading: new Icon(Icons.list),
-                  title: Text('List Records'),
+                  title: Text('Input & Selection Widgets'),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ViewRecords()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => InputSelectionAppBar()));
                    // Navigator.pop(context);
                   }
                 ),
